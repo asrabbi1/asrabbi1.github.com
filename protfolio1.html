@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdus Salam Rabbi - Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .about img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+        }
+
+        .about .text {
+            max-width: 600px;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Skills Section */
+        .skills {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .skill-bar-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .skill-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 30px;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 10px;
+            color: white;
+            line-height: 30px;
+        }
+
+        .django { background-color: #4CAF50; } /* Green */
+        .javascript { background-color: #f44336; } /* Red */
+        .react { background-color: #2196F3; } /* Blue */
+        .htmlcss { background-color: #FF9800; } /* Orange */
+        .laravel { background-color: #FF5722; } /* Deep Orange */
+        .flask { background-color: #9C27B0; } /* Purple */
+        .python { background-color: #3F51B5; } /* Indigo */
+
+        /* Projects Section */
+        .projects {
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .project-card {
+            background-color: white;
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        /* Resume Section */
+        .cv-section {
+            background-color: #f0f0f0;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cv-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cv-details {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cv-details table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cv-details th, .cv-details td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .cv-details th {
+            background-color: #333;
+            color: white;
+        }
+
+        .cv-download button {
+            padding: 15px 30px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .cv-download button:hover {
+            background-color: #777;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            padding: 15px 30px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact form button:hover {
+            background-color: #777;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about img {
+                margin-bottom: 20px;
+            }
+
+            .project-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Abdus Salam Rabbi</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container about">
+        <img src="https://raw.githubusercontent.com/asrabbi1/Image/refs/heads/main/me.jpg" alt="Abdus Salam Rabbi">
+        <div class="text">
+            <h2>About Me</h2>
+            <p>Hi, I’m Abdus Salam Rabbi, a web development expert skilled in Django, Django Rest Framework, JavaScript, HTML, CSS, React.js, Laravel, PHP, Flask, and Python. I’m passionate about creating scalable and efficient web solutions that blend technology and creativity.</p>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="cv-section" id="cv">
+        <h2>My Resume</h2>
+        <div class="cv-details">
+            <table>
+                <tr><th>Name</th><td>Abdus Salam Rabbi</td></tr>
+                <tr><th>Email</th><td>asrabbi0.com@gmail.com</td></tr>
+                <tr><th>Phone</th><td>+8801739689864</td></tr>
+                <tr><th>Address</th><td>Jhenaidah-7300, Dhaka, Bangladesh</td></tr>
+                <tr><th>Degree</th><td>Software Engineer</td></tr>
+                <tr><th>Freelance</th><td>Available</td></tr>
+            </table>
+            <div class="cv-download">
+                <button onclick="downloadCV()">Download Resume</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skill-bar-container">
+            <div class="skill-bar">
+                <span class="django" style="width: 90%;">Django (90%)</span>
+            </div>
+            <div class="skill-bar">
+                <span class="javascript" style="width: 85%;">JavaScript (85%)</span>
+            </div>
+            <div class="skill-bar">
+                <span class="react" style="width: 80%;">React.js (80%)</span>
+            </div>
+            <div class="skill-bar">
+                <span class="htmlcss" style="width: 75%;">HTML & CSS (75%)</span>
+            </div>
+            <div class="skill-bar">
+                <span class="laravel" style="width: 70%;">Laravel (70%)</span>
+            </div>
+            <div class="skill-bar">
+                <span class="flask" style="width: 65%;">Flask (65%)</span>
+            </div>
+            <div class="skill-bar">
+                <span class="python" style="width: 90%;">Python (90%)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/asrabbi1/Image/refs/heads/main/p-ten.png" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>This project showcases a full-stack application built with Django and React.</p>
+            </div>
+            <div class="project-card">
+                <img src=" https://raw.githubusercontent.com/asrabbi1/Image/refs/heads/main/popup-project-3.jpg " alt="Project 2">
+                <h3> Project 2 </h3>
+                <p>This project demonstrates the use of React.js to build dynamic, user-friendly interfaces with high responsiveness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Abdus Salam Rabbi. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function downloadCV() {
+            window.open('path_to_your_cv_file', '_blank');
+        }
+    </script>
+</body>
+</html>
